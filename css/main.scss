@@ -31,6 +31,7 @@ section {
   padding: 120px;
   .container {
     max-width: 1200px;
+    margin: 0 auto;
   }
 }
 
@@ -149,7 +150,7 @@ header {
 
 section#about {
   padding: 120px 180px;
-  background: #1d110e;
+  background: #272525;
 }
 
 section#services {
@@ -161,6 +162,40 @@ section#services {
         display: grid;
         grid-template-columns: 440px 1fr;
         column-gap: 10px;
+        padding: 32px 0;
+      }
+    }
+  }
+}
+
+section#clients {
+  background: #272525;
+  .container {
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      column-gap: 24px;
+      row-gap: 24px;
+      img {
+        display: block;
+        width: 100%;
+        height: auto
+      }
+    }
+  }
+}
+
+section#contact-us {
+  background: #000000;
+  .container {
+    .contact-box {
+      max-width: 740px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      row-gap: 32px;
+      .office {
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
         padding: 32px 0;
       }
     }
