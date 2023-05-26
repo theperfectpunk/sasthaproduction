@@ -29,6 +29,7 @@
     "webpack-merge": "^5.8.0"
   },
   "dependencies": {
+    "photoswipe": "^5.3.7",
     "swiper": "^9.2.2"
   }
 }

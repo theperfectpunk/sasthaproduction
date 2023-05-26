@@ -25,6 +25,25 @@ p {
   opacity: 0.8;
 }
 
+button {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 46px;
+  text-align: center;
+  padding: 0 24px;
+  background-color: #c0933e;
+  box-sizing: border-box;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  transition: 0.2s ease-in background-color, 0.2s ease-in color;
+  &:hover {
+    color: #c0933e;
+    background-color: #fff;
+  }
+  cursor: pointer;
+}
+
 section {
   width: 100%;
   box-sizing: border-box;
@@ -45,12 +64,21 @@ section {
   padding-bottom: 32px;
 }
 
+.mv-16 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
 .mt-24 {
   margin-top: 24px;
 }
 
+.mt-32 {
+  margin-top: 32px;
+}
+
 .mt-64 {
-  margin-top: 64px;
+  margin-top: 64px !important;
 }
 
 nav {
@@ -82,10 +110,21 @@ nav {
       column-gap: 40px;
       .nav-item {
         text-decoration: none;
-        color: #fff;
+        color: #c0933e;
         line-height: 96px;
+        &.social {
+          img {
+            cursor: pointer;
+            &:hover {
+              filter: invert(1);
+            }
+            &:not(:last-child) {
+              margin-right: 12px;
+            }
+          }
+        }
         &:hover {
-          color: #c0933e;
+          color: #fff;
         }
       }
     }
@@ -97,7 +136,7 @@ header {
   box-sizing: border-box;
   height: 100vh;
   position: relative;
-  .swiper {
+  .hero-swiper {
     height: 100%;
 
     .swiper-wrapper {
@@ -168,6 +207,66 @@ section#services {
   }
 }
 
+section#our-work {
+  background: #272525;
+  .container {
+    .our-work-videos {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(250px, 1fr));
+      column-gap: 40px;
+      row-gap: 40px;
+      .video {
+        position: relative;
+        width: 100%;
+        &:hover {
+          img {
+            opacity: 0;
+          }
+          button {
+            opacity: 1;
+            z-index: 2;
+          }
+        }
+        img {
+          width: 100%;
+          height: auto;
+          transition: 0.2s ease-in opacity;
+          z-index: 1;
+        }
+        button {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          transition: 0.2s ease-in opacity;
+          z-index: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+section#some-bts {
+  background: #000000;
+  .container {
+    .bts-swiper {
+      height: 180px;
+
+      .swiper-wrapper {
+        .swiper-slide {
+          cursor: pointer;
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
 section#clients {
   background: #272525;
   .container {
@@ -179,7 +278,7 @@ section#clients {
       img {
         display: block;
         width: 100%;
-        height: auto
+        height: auto;
       }
     }
   }
@@ -190,13 +289,36 @@ section#contact-us {
   .container {
     .contact-box {
       max-width: 740px;
+      width: 100%;
       margin: 0 auto;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      align-items: center;
       row-gap: 32px;
       .office {
+        width: 100%;
         border-top: 1px solid rgba(255, 255, 255, 0.3);
-        padding: 32px 0;
+        padding-top: 32px;
+        display: grid;
+        grid-template-columns: minmax(0, 268px) 1fr;
+        row-gap: 32px;
+        .name {
+          font-size: 16px;
+          line-height: 26px;
+          color: #c0933e;
+        }
+        .address {
+          p {
+            font-size: 14px;
+            font-weight: 300;
+            color: #ffffff;
+          }
+        }
+        .locate-btn {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
       }
     }
   }
