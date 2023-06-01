@@ -51,3 +51,12 @@ new Swiper(".bts-swiper", {
     disableOnInteraction: false,
   },
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburgerDiv = document.getElementsByClassName("hamburger");
+  if (hamburgerDiv.length) {
+    hamburgerDiv[0].addEventListener("click", function () {
+      this.classList.toggle("is-active");
+    });
+  }
+});
