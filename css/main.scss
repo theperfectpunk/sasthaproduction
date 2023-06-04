@@ -141,6 +141,10 @@ nav {
   padding: 0 40px;
   box-sizing: border-box;
   z-index: 3;
+  height: 96px;
+  &.open {
+    height: 100%;
+  }
   .nav {
     height: 96px;
     max-width: 1200px;
@@ -184,6 +188,31 @@ nav {
           &:hover {
             color: #fff;
           }
+        }
+      }
+    }
+  }
+
+  .mobile-nav-overlay {
+    display: none;
+    &.open {
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-item {
+      cursor: pointer;
+      text-decoration: none;
+      color: #c0933e;
+      line-height: 64px;
+      border-top: 1px solid #c0933e;
+      &.social {
+        display: flex;
+        column-gap: 24px;
+        justify-content: space-evenly;
+        padding: 14px 0;
+        img {
+          height: 36px;
+          width: auto;
         }
       }
     }

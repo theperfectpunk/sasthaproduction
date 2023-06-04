@@ -53,10 +53,25 @@ new Swiper(".bts-swiper", {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  /** hamburger animation */
   const hamburgerDiv = document.getElementsByClassName("hamburger");
-  if (hamburgerDiv.length) {
-    hamburgerDiv[0].addEventListener("click", function () {
-      this.classList.toggle("is-active");
-    });
+  const nav = document.getElementsByTagName("nav");
+  const navItemContainer =
+    document.getElementsByClassName("mobile-nav-overlay");
+
+  const toggleMenu = function () {
+    if (nav[0]) nav[0].classList.toggle("open");
+    if (navItemContainer[0]) navItemContainer[0].classList.toggle("open");
+    hamburgerDiv[0].classList.toggle("is-active");
+  };
+  hamburgerDiv[0].addEventListener("click", toggleMenu);
+
+  /** hamburger close */
+  const mobileNavOverlay = document.querySelectorAll(
+    ".mobile-nav-overlay .nav-item"
+  );
+
+  for (const navItem of mobileNavOverlay) {
+    navItem.addEventListener("click", toggleMenu);
   }
 });
